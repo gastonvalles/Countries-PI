@@ -22,14 +22,18 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
     return (
         <div className={styles.navbar}>
             <div className={styles.contLogo}>
-                <Link to="/home"><img style={{ width: '5rem' }} src={logo} alt="logo"></img></Link>
+                <Link to="/home">
+                    <button className={styles.btn}>
+                        <img className={styles.i} src={logo} alt="logo" />
+                    </button>
+                </Link>
             </div>
             {
                 home ? (
                     <div className={styles.contSearch}>
                         <div className={styles.search}>
-                            <div className={styles.searchtitle}>Find Your Next Destination</div>
-                            <input className={styles.searchinp} value={name} type="text" placeholder="Which country do you want to visit..."
+                            <div>Find Your Next Destination</div>
+                            <input className={styles.searchinp} value={name} type="text" placeholder="   Which country do you want to visit..."
                                 onChange={(e) => { setName(e.target.value); handleInputChange(e.target.value) }}
                             />
                         </div>
@@ -40,7 +44,7 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
                 home ? (
                     <div className={styles.filtros}>
                         <div> Alphabetical order
-                            <select className={styles.select} onChange={e => handleSort(e)}>
+                            <select className={styles.select} onChange={handleSort}>
                                 <option>...</option>
                                 <option value="asc">Ascending</option>
                                 <option value="desc">Descending</option>
@@ -79,9 +83,9 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
                     </div>
                 ) : null
             }
-            <div className={styles.contAct}>
-                <Link to="/activities" className={styles.createAct}>Add Touristic Activity</Link>
-            </div>
+            <button className={styles.contAct}>
+                <Link to="/activities" className={styles.createAct}>Create Touristic Activity</Link>
+            </button>
         </div>
     )
 };

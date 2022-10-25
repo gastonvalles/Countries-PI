@@ -58,6 +58,13 @@ export default function Home() {
     return (
         <div className={styles.prindiv}>
             <NavBar setCurrentPage={setCurrentPage} handleFilterByAct={handleFilterByAct} handleSortPop={handleSortPop} handleSort={handleSort} handleFilteredCountrie={handleFilteredCountrie} home={true} />
+            <div className={styles.paginado}>
+                <Paged
+                    countriesPerPage={countriesPerPage}
+                    allCountries={allCountries.length}
+                    paged={paged}
+                />
+            </div>
             <div className={styles.contenedorCards}>
                 {currentCountries.length
                     ? currentCountries.map((e) => {

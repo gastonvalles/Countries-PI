@@ -8,24 +8,27 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 1080px;
 }
 
 .btn {
+    margin-top: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     border-color: transparent;
     animation: bounce .5s alternate infinite linear;
-    width: 10rem;
+    width: 15rem;
+    height: 15rem;
 }
 
 .i {
-    transform: rotate(-12deg);
     display: flex;
     justify-content: center;
     align-self: center;
+    width: 15rem;
+    height: 15rem;
 }
 
 .btn:hover {

@@ -1,17 +1,49 @@
 .navbar {
     position: fixed;
     top: 0;
-    background-color: rgb(5, 35, 77);
-    height: 5rem;
+    background-color: rgb(30, 30, 30);
+    height: 6rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
-.contSearch {
+.contLogo {
+    transition: .3s;
+}
+
+.contLogo:hover {
+    transition: .3s;
+    transform: scale(1.1);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: transparent;
+    border-color: transparent;
     height: 5rem;
+    width: 5rem;
+    margin-left: 1rem;
+    transition: .2s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.i {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 5rem;
+    width: 5rem;
+}
+
+.btn:hover {
+    transition: .3s;
+    transform: scale(1.1);
 }
 
 .search {
@@ -19,15 +51,20 @@
     top: 1rem;
 }
 
+.contSearch {
+    height: 5rem;
+}
+
 .searchinp {
-    width: 20rem;
-    height: 1.5rem;
+    width: 30rem;
+    height: 1.7rem;
     border-radius: 1rem;
     margin-top: .3rem;
 }
 
 .select {
-    height: 1.5rem;
+    width: 10rem;
+    height: 1.7rem;
     border-radius: 1rem;
     margin-top: .5rem;
 }
@@ -44,22 +81,24 @@
     top: 1rem;
 }
 
-.createAct {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    background-color: rgb(235, 174, 19);
-    border-color: rgb(131, 89, 33);
-}
-
 .contAct {
-    background-color: rgb(221, 221, 221);
-    width: 6rem;
-    height: 4rem;
+    width: 10rem;
+    height: 5rem;
+    text-decoration: none;
+    font-weight: bold;
     position: relative;
+    text-align: center;
     right: 2rem;
     cursor: pointer;
-    border-radius: 1rem;
-    background-color: rgb(235, 174, 19);
-    border-color: rgb(131, 89, 33);
+    border-radius: 5rem;
+    color: white;
+    background-color: rgba(235, 174, 19, 0.845);
+    border-color: rgb(255, 188, 20);
+    transition: .3s;
+}
+
+.contAct:hover {
+    transition: .3s;
+    transform: scale(1.1);
+    background-color: rgb(255, 188, 20);
 }
