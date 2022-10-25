@@ -1,0 +1,61 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: rgb(54, 63, 63);
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+}
+
+.contSearch {
+    height: 5rem;
+}
+
+.search {
+    position: relative;
+    top: 1rem;
+}
+
+.searchinp {
+    width: 20rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    margin-top: .3rem;
+}
+
+.select {
+    height: 1.5rem;
+    border-radius: 1rem;
+    margin-top: .5rem;
+}
+
+.filtros {
+    width: 40%;
+    height: 5rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.filtros div {
+    position: relative;
+    top: 1rem;
+}
+
+.createAct {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.contAct {
+    background-color: rgb(221, 221, 221);
+    width: 6rem;
+    height: 3rem;
+    position: relative;
+    right: 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}

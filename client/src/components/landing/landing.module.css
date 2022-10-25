@@ -1,0 +1,31 @@
+.img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url("../images/bg.png");
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+    animation: bounce .5s alternate infinite linear;
+}
+
+.i {
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(-12deg);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    100% {
+        transform: scale(1.1, 1.1);
+    }
+}
