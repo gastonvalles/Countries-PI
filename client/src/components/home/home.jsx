@@ -62,12 +62,12 @@ export default function Home() {
                 {currentCountries.length
                     ? currentCountries.map((e) => {
                         return (
-                            <div className={styles.Card}>
+                            <div className={styles.card}>
                                 <Card flagImg={e.flagImg} name={e.name} continent={e.continent} key={e.id} id={e.id} />
                             </div>
                         )
                     })
-                    : <h1>Loading...</h1>}
+                    : <h1 className={styles.loaging}>Loading...</h1>}
             </div>
             <div className={styles.paginado}>
                 <Paged

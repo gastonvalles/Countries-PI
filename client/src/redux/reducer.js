@@ -4,7 +4,7 @@ const initialState = {
     countries: [],
     allCountries: [],
     allActivities: [],
-    activities: [],
+    Activities: [],
     detail: {}
 };
 

@@ -1,7 +1,19 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .prindiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 7rem;
+    background-image: url("../images/bg.png");
+    overflow: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5rem;
 }

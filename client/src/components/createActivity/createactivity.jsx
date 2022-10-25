@@ -105,7 +105,7 @@ export default function CreateActivity() {
             <NavBar home={false} />
             <div className={styles.contenedorform}>
                 <h2 className={styles.titulof}>Create your Tourist Activity</h2>
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label className={styles.campos}>Name: </label>
                         <input className={styles.inputs} type="text" value={input.name} name="name" onChange={handleChange} />
