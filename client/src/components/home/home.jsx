@@ -69,8 +69,8 @@ export default function Home() {
                 {currentCountries.length
                     ? currentCountries.map((e) => {
                         return (
-                            <div className={styles.card}>
-                                <Card flagImg={e.flagImg} name={e.name} continent={e.continent} key={e.id} id={e.id} />
+                            <div key={e.id} className={styles.card}>
+                                <Card flagImg={e.flagImg} name={e.name} continent={e.continent} id={e.id} />
                             </div>
                         )
                     })

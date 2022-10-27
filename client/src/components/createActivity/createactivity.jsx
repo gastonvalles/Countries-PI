@@ -42,11 +42,9 @@ export default function CreateActivity() {
         countries: []
     });
 
-
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
-
 
     function handleChange(e) {
         setInput({
@@ -60,7 +58,6 @@ export default function CreateActivity() {
         }));
         console.log(input);
     };
-
 
     const handleSelect = (e) => {
         console.log(e)
@@ -79,76 +76,75 @@ export default function CreateActivity() {
         });
     };
 
-
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(input);
-        if (!input.name && !input.difficulty && !input.duration && !input.season && !input.countries) {
-            return alert('Complete correctly the form before sending it');
-        };
-
-        dispatch(postActivity(input));
-        alert("Activity succesfully created!");
-        setInput({
-            name: "",
-            difficulty: "",
-            duration: "",
-            season: "",
-            countries: []
-        });
-        history.push(`/countries/${input.countries}`);
+        if (input.name.length > 0 && input.difficulty.length > 0 && input.duration.length > 0 && input.season.length > 0 && input.countries.length > 0) {
+            dispatch(postActivity(input));
+            alert("Activity succesfully created!");
+            setInput({
+                name: "",
+                difficulty: "",
+                duration: "",
+                season: "",
+                countries: []
+            });
+            history.push(`/countries/${input.countries}`);
+        } else {
+            alert('Complete correctly the form before sending it');
+        }
     };
-
 
     return (
         <div className={styles.prindiv}>
             <NavBar home={false} />
             <div className={styles.contenedorform}>
                 <h2 className={styles.titulof}>Create your Tourist Activity</h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label className={styles.campos}>Name: </label>
-                        <input className={styles.inputs} type="text" value={input.name} name="name" onChange={handleChange} />
-                        {errors.name && (<p className={styles.errors}>{errors.name}</p>)}
-                    </div>
-                    <div>
-                        <label className={styles.campos}>Choose the country for your activity: </label>
-                        <select className={styles.inputs} name="countries" id="countries" onChange={handleSelect}>
-                            <option value="empty">...</option>
-                            {countries.map((con) => (
-                                <option value={con.id}>{con.name}</option>
-                            ))}
-                        </select>
-                        {errors.countries && (<p className={styles.errors}>{errors.countries}</p>)}
-                    </div>
-                    <div>
-                        <label className={styles.campos}>Season: </label>
-                        <select className={styles.inputs} name="season" id="season" onChange={handleSelect}>
-                            <option value="empty"></option>
-                            <option value={"Verano"}>Summer </option>
-                            <option value={"Invierno"}>Winter </option>
-                            <option value={"Primavera"}>Spring </option>
-                            <option value={"Otoño"}>Autumn/Fall </option>
-                        </select>
-                        {errors.season && (<p className={styles.errors}>{errors.season}</p>)}
-                    </div>
-                    <div>
-                        <label className={styles.campos}>Difficulty: </label>
-                        <input className={styles.inputs} type="number" value={input.difficulty} name="difficulty" onChange={handleChange} />
-                        {errors.difficulty && (<p className={styles.errors}>{errors.difficulty}</p>)}
-                    </div>
-                    <div>
-                        <label className={styles.campos}>Duration: </label>
-                        <input className={styles.inputs} type="number" value={input.duration} name="duration" onChange={handleChange} />
-                        <label className={styles.campos}> hours</label>
-                        {errors.duration && (<p className={styles.errors}>{errors.duration}</p>)}
-                    </div>
-                    <div>
-                        <button className={styles.botsub} type="submit" disabled={Object.keys(errors).length === 0
-                            ? false
-                            : true}>Add Activity</button>
-                    </div>
-                </form>
+                <div className={styles.formulario}>
+                    <form onSubmit={handleSubmit}>
+                        <div className={styles.campos}>
+                            <label>Name: </label>
+                            <input className={styles.inputs} type="text" placeholder="Ej: Skate" value={input.name} name="name" onChange={handleChange} />
+                            {errors.name && (<p className={styles.errors}>{errors.name}</p>)}
+                        </div>
+                        <div className={styles.campos}>
+                            <label>Choose a country: </label>
+                            <select className={styles.inputs} name="countries" id="countries" placeholder="Ej: Burkina Faso" onChange={handleSelect}>
+                                <option value="empty" >...</option>
+                                {countries.map((el) => (
+                                    <option value={el.id} key={el.id}>{el.name}</option>
+                                ))}
+                            </select>
+                            {errors.countries && (<p className={styles.errors}>{errors.countries}</p>)}
+                        </div>
+                        <div className={styles.campos}>
+                            <label>Season: </label>
+                            <select className={styles.inputs} name="season" id="season" onChange={handleSelect}>
+                                <option value="empty">...</option>
+                                <option value={"Verano"}>Summer </option>
+                                <option value={"Invierno"}>Winter </option>
+                                <option value={"Primavera"}>Spring </option>
+                                <option value={"Otoño"}>Autumn/Fall </option>
+                            </select>
+                            {errors.season && (<p className={styles.errors}>{errors.season}</p>)}
+                        </div>
+                        <div className={styles.campos}>
+                            <label>Difficulty: </label>
+                            <input className={styles.inputs} type="number" placeholder="Between 1 and 5" value={input.difficulty} name="difficulty" onChange={handleChange} />
+                            {errors.difficulty && (<p className={styles.errors}>{errors.difficulty}</p>)}
+                        </div>
+                        <div className={styles.campos}>
+                            <label >Duration: </label>
+                            <input className={styles.inputs} type="number" placeholder="Between 1 and 24" value={input.duration} name="duration" onChange={handleChange} />
+                            <label className={styles.campos}> hours</label>
+                            {errors.duration && (<p className={styles.errors}>{errors.duration}</p>)}
+                        </div>
+                        <div className={styles.campos}>
+                            <button className={styles.botsub} type="submit" disabled={Object.keys(errors).length === 0
+                                ? false
+                                : true}>Add Activity</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     )

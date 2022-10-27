@@ -1,14 +1,17 @@
+body {
+    margin: 0;
+    background-image: url("../images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .prindiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 7rem;
-    background-image: url("../images/bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     margin-top: 5rem;
+    height: 100%;
 }
 
 .contenedorCards {

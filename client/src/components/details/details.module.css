@@ -1,13 +1,88 @@
+h4,
+body,
+p,
+h3,
+h2 {
+    margin: 0;
+}
+
 .prindiv {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 7rem;
     background-image: url("../images/bg.png");
     overflow: none;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: 5rem;
+}
+
+.card {
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translate(0, 5vh);
+    flex-wrap: wrap;
+}
+
+.conpais {
+    width: 50rem;
+    height: 45rem;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.59);
+    border-radius: 5rem;
+    border: solid 3px;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nombred {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.codigo {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.continented {
+    font-size: 25px;
+}
+
+.detalle {
+    font-size: 20px;
+}
+
+.conact {
+    width: 30rem;
+    height: 45rem;
+    background-color: rgba(255, 255, 255, 0.59);
+    border-radius: 5rem;
+    border: solid 3px;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titulod,
+.nombreact {
+    font-size: 2.188rem;
+}
+
+.detallea {
+    font-size: 28px;
+    font-weight: 500;
 }

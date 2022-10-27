@@ -1,14 +1,15 @@
-const { Activity } = require('../db.js');
+const { Activity, Country } = require('../db.js');
 
 const postActivity = async (req, res) => {
-    const { name, difficulty, duration, season, countryId } = req.body;
+    const { name, difficulty, duration, season, countries } = req.body;
     if (!name && !difficulty && !duration && !season) return res.status(404).json({ msg: "Faltan Datos" });
     try {
         const obj = { name, difficulty, duration, season };
         const newActivity = await Activity.create(obj);
-        newActivity.addCountry(countryId);
+        await newActivity.addCountry(countries[0]);
         // console.log(newActivity.__proto__);
-        res.json(newActivity);
+        let aux = await Country.findOne({ where: { id: countries[0] } });
+        res.json(aux);
     } catch (error) {
         console.log(error);
     }

@@ -56,14 +56,14 @@
 }
 
 .searchinp {
-    width: 30rem;
+    width: 25vw;
     height: 1.7rem;
     border-radius: 1rem;
     margin-top: .3rem;
 }
 
 .select {
-    width: 10rem;
+    width: 9vw;
     height: 1.7rem;
     border-radius: 1rem;
     margin-top: .5rem;
@@ -83,7 +83,7 @@
 
 .contAct {
     width: 10rem;
-    height: 5rem;
+    height: 4rem;
     text-decoration: none;
     font-weight: bold;
     position: relative;
@@ -92,13 +92,13 @@
     cursor: pointer;
     border-radius: 5rem;
     color: white;
-    background-color: rgba(235, 174, 19, 0.845);
-    border-color: rgb(255, 188, 20);
+    background-color: rgb(235, 192, 19);
+    border-color: rgba(235, 192, 19, 0.353);
     transition: .3s;
 }
 
 .contAct:hover {
     transition: .3s;
     transform: scale(1.1);
-    background-color: rgb(255, 188, 20);
+    background-color: rgb(235, 192, 19);
 }

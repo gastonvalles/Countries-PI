@@ -2,10 +2,10 @@
     background-color: rgba(33, 38, 47, 0.632);
     height: 20rem;
     display: flex;
-    justify-content: center;
     border-radius: 2rem;
     color: white;
     border: 2px solid rgb(15, 13, 13);
+    align-items: center;
 }
 
 .link {
@@ -14,13 +14,11 @@
 
 }
 
-.name {
-    
-}
+.name {}
 
 .flagImg {
     width: 20rem;
     height: 12rem;
-    margin-top: 1rem;
     border: 2px solid rgb(216, 230, 247);
+    margin: 0 1rem;
 }
