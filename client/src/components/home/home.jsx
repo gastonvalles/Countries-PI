@@ -6,6 +6,7 @@ import NavBar from "../navBar/navbar.jsx";
 import Paged from "../paged/paged.jsx";
 import styles from "./home.module.css";
 
+
 export default function Home() {
     const dispatch = useDispatch();
     const allCountries = useSelector(store => store.countries);
@@ -29,9 +30,11 @@ export default function Home() {
         dispatch(getActivities());
     }, [dispatch]);
 
+
     function handleFilteredCountrie(e) {
         dispatch(filterByContinents(e.target.value));
     };
+
 
     function handleSort(e) {
         e.preventDefault();
@@ -40,12 +43,14 @@ export default function Home() {
         setOrden(`Ordered ${e.target.value}`);
     };
 
+
     function handleSortPop(e) {
         e.preventDefault();
         dispatch(orderByPop(e.target.value));
         setCurrentPage(1);
         setOrden(`Ordered ${e.target.value}`);
     };
+
 
     function handleFilterByAct(e) {
         e.preventDefault();
@@ -54,6 +59,7 @@ export default function Home() {
             : dispatch(filterByAct(e.target.value));
         setCurrentPage(1);
     };
+
 
     return (
         <div className={styles.prindiv}>

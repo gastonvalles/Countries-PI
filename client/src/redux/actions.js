@@ -50,7 +50,7 @@ export function getCountriesIds(id) {
                 payload: json.data
             })
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 };
@@ -65,7 +65,7 @@ export function getCountriesQuery(name) {
                 payload: json.data
             })
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 };
@@ -88,7 +88,7 @@ export function getActivities() {
                 payload: json.data
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 };
@@ -100,7 +100,7 @@ export function postActivity(payload) {
             let json = await axios.post(`http://localhost:3001/activities`, payload);
             return json;
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 };

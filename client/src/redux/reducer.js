@@ -121,9 +121,9 @@ function rootReducer(state = initialState, action) {
             };
 
         case GET_COUNTRIES_BY_NAME:
-            console.log(action.payload)
+            // console.log(action.payload)
             let nombre = action.payload === "" ? state.allCountries : state.countries.filter((e) => e.name.toLowerCase().includes(action.payload.toLowerCase()))
-            console.log(action.payload)
+            // console.log(action.payload)
             return {
                 ...state,
                 countries: nombre

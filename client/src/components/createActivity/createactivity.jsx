@@ -42,9 +42,11 @@ export default function CreateActivity() {
         countries: []
     });
 
+
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
+
 
     function handleChange(e) {
         setInput({
@@ -56,11 +58,12 @@ export default function CreateActivity() {
             ...input,
             [e.target.name]: e.target.value
         }));
-        console.log(input);
+        // console.log(input);
     };
 
+
     const handleSelect = (e) => {
-        console.log(e)
+        // console.log(e)
         setInput((estado) => {
             if (e.target.name === "countries") {
                 return {
@@ -76,11 +79,13 @@ export default function CreateActivity() {
         });
     };
 
+
     function handleSubmit(e) {
         e.preventDefault();
         if (input.name.length > 0 && input.difficulty.length > 0 && input.duration.length > 0 && input.season.length > 0 && input.countries.length > 0) {
             dispatch(postActivity(input));
             alert("Activity succesfully created!");
+
             setInput({
                 name: "",
                 difficulty: "",
@@ -93,6 +98,7 @@ export default function CreateActivity() {
             alert('Complete correctly the form before sending it');
         }
     };
+
 
     return (
         <div className={styles.prindiv}>
