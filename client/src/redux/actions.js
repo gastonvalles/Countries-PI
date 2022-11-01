@@ -55,7 +55,7 @@ export function getCountriesIds(id) {
     }
 };
 
-//get by query (default?)
+//get by query 
 export function getCountriesQuery(name) {
     return async (dispatch) => {
         try {
@@ -70,7 +70,7 @@ export function getCountriesQuery(name) {
     }
 };
 
-//filter by activities
+//filter by activities (Activity?)
 export function filterByAct(activity) {
     return {
         type: FILTER_BY_ACTIVITIES,
@@ -82,7 +82,7 @@ export function filterByAct(activity) {
 export function getActivities() {
     return async (dispatch) => {
         try {
-            let json = axios.get(`http://localhost:3001/activities`);
+            let json = await axios.get(`http://localhost:3001/activities`);
             return dispatch({
                 type: GET_TOURIST_ACTIVITIES,
                 payload: json.data

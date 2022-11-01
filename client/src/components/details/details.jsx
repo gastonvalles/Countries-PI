@@ -11,14 +11,9 @@ export default function CountryDetail(props) {
     const id = props.match.params.id;
     const country = useSelector((state) => state.detail);
 
-    // useEffect(() => {
-    //     // console.log(country)
-    // }, [country]);
-
     useEffect(() => {
         dispatch(getCountriesIds(id));
     }, [dispatch, id]);
-
 
     return (
         <div className={styles.prindiv}>

@@ -5,6 +5,7 @@ import { getCountries, getCountriesByName } from "../../redux/actions.js";
 import logo from "../images/logo.png";
 import styles from "./navbar.module.css";
 
+
 export default function NavBar({ setCurrentPage, allActivities, handleSortPop, home, handleSort, handleFilteredCountrie }) {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
@@ -51,14 +52,14 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
                             </select>
                         </div>
                         <div> Population
-                            <select className={styles.select} onChange={e => handleSortPop(e)}>
+                            <select className={styles.select} onChange={handleSortPop}>
                                 <option>...</option>
                                 <option value="mayp">Minor to Major</option>
                                 <option value="menp">Major to Minor</option>
                             </select>
                         </div>
                         <div> Search by Country
-                            <select className={styles.select} onChange={e => handleFilteredCountrie(e)}>
+                            <select className={styles.select} onChange={handleFilteredCountrie}>
                                 <option value={"All"}>...</option>
                                 <option value={"South America"}>South America</option>
                                 <option value={"North America"}>North America</option>

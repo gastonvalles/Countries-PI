@@ -6,9 +6,11 @@ const postActivity = async (req, res) => {
     try {
         const obj = { name, difficulty, duration, season };
         const newActivity = await Activity.create(obj);
-        await newActivity.addCountry(countries[0]);
+        await newActivity.addCountry(countries);
         // console.log(newActivity.__proto__);
-        let aux = await Country.findOne({ where: { id: countries[0] } });
+        const aux = countries.map(async () => {
+            await Country.findOne({ where: { id: countries } });
+        })
         res.json(aux);
     } catch (error) {
         console.log(error);

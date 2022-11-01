@@ -42,7 +42,6 @@ export default function CreateActivity() {
         countries: []
     });
 
-
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
@@ -63,18 +62,19 @@ export default function CreateActivity() {
 
 
     const handleSelect = (e) => {
-        // console.log(e)
         setInput((estado) => {
-            if (e.target.name === "countries") {
-                return {
-                    ...estado,
-                    countries: [...estado.countries, e.target.value]
-                }
-            } else {
-                return {
-                    ...estado,
-                    [e.target.name]: e.target.value
-                }
+            return {
+                ...estado,
+                [e.target.name]: e.target.value
+            }
+        });
+    };
+
+    const handleMultiple = (e) => {
+        setInput((estado) => {
+            return {
+                ...estado,
+                countries: [...estado.countries, e.target.value]
             }
         });
     };
@@ -93,7 +93,7 @@ export default function CreateActivity() {
                 season: "",
                 countries: []
             });
-            history.push(`/countries/${input.countries}`);
+            history.push(`/home`);
         } else {
             alert('Complete correctly the form before sending it');
         }
@@ -114,10 +114,10 @@ export default function CreateActivity() {
                         </div>
                         <div className={styles.campos}>
                             <label>Choose a country: </label>
-                            <select className={styles.inputs} name="countries" id="countries" placeholder="Ej: Burkina Faso" onChange={handleSelect}>
-                                <option value="empty" >...</option>
+                            <select className={styles.inputs} name="countries" id="countries" placeholder="Ej: Burkina Faso" multiple>
+                                <option value="empty">...</option>
                                 {countries.map((el) => (
-                                    <option value={el.id} key={el.id}>{el.name}</option>
+                                    <option value={el.id} key={el.id} onClick={handleMultiple}>{el.name}</option>
                                 ))}
                             </select>
                             {errors.countries && (<p className={styles.errors}>{errors.countries}</p>)}
@@ -151,7 +151,7 @@ export default function CreateActivity() {
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 };
