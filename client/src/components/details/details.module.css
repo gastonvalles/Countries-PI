@@ -30,8 +30,8 @@ h2 {
 }
 
 .conpais {
-    width: 50rem;
-    height: 45rem;
+    width: 45vw;
+    height: 90%;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.59);
     border-radius: 5rem;
@@ -44,7 +44,7 @@ h2 {
 }
 
 .nombred {
-    font-size: 35px;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: uppercase;
@@ -57,7 +57,7 @@ h2 {
 }
 
 .continented {
-    font-size: 25px;
+    font-size: 1rem;
 }
 
 .detalle {
@@ -65,8 +65,8 @@ h2 {
 }
 
 .conact {
-    width: 30rem;
-    height: 45rem;
+    width: 45vw;
+    height: 90%;
     background-color: rgba(255, 255, 255, 0.59);
     border-radius: 5rem;
     border: solid 3px;

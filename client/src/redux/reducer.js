@@ -100,21 +100,22 @@ function rootReducer(state = initialState, action) {
             };
 
         case FILTER_BY_ACTIVITIES:
+            let array = [];
             const allCountries2 = state.allCountries;
             const solo = allCountries2.filter((pais) => {
-                return pais.activities.length > 0;
+                return pais.Activities.length > 0;
             });
-            let array = [];
+
             for (let i = 0; i < solo.length; i++) {
-                for (let j = 0; j < solo[i].activities.length; j++) {
-                    if (solo[i].activities[j].name === action.payload) {
+                for (let j = 0; j < solo[i].Activities.length; j++) {
+                    if (solo[i].Activities[j].name === action.payload) {
                         array.push(solo[i]);
                     }
                 }
             }
-            const filtro = action.payload === "Todos"
-                ? allCountries2
-                : array;
+
+            const filtro = action.payload === "Todos" ? allCountries2 : array;
+
             return {
                 ...state,
                 countries: filtro,

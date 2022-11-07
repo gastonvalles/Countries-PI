@@ -71,10 +71,10 @@ export function getCountriesQuery(name) {
 };
 
 //filter by activities (Activity?)
-export function filterByAct(activity) {
+export function filterByAct(Activity) {
     return {
         type: FILTER_BY_ACTIVITIES,
-        payload: activity
+        payload: Activity
     }
 };
 

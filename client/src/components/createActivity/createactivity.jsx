@@ -42,6 +42,7 @@ export default function CreateActivity() {
         countries: []
     });
 
+
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
@@ -70,11 +71,22 @@ export default function CreateActivity() {
         });
     };
 
+
     const handleMultiple = (e) => {
+        console.log("pais que elegí " + e.target.value);
+        e.preventDefault();
         setInput((estado) => {
-            return {
-                ...estado,
-                countries: [...estado.countries, e.target.value]
+            console.log(estado.countries);
+            if (estado.countries.includes(e.target.value) === false) {
+                return {
+                    ...estado,
+                    countries: [...estado.countries, e.target.value]
+                }
+            } else {
+                return {
+                    ...estado,
+                    countries: [...estado.countries]
+                }
             }
         });
     };

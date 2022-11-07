@@ -6,7 +6,7 @@ import logo from "../images/logo.png";
 import styles from "./navbar.module.css";
 
 
-export default function NavBar({ setCurrentPage, allActivities, handleSortPop, home, handleSort, handleFilteredCountrie }) {
+export default function NavBar({ setCurrentPage, handleFilterByAct, handleSortPop, home, handleSort, handleFilteredCountrie }) {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
     const activities = useSelector(state => state.allActivities);
@@ -19,6 +19,7 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
         dispatch(getCountriesByName(e));
         setCurrentPage(1);
     };
+
 
     return (
         <div className={styles.navbar}>
@@ -44,7 +45,7 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
             {
                 home ? (
                     <div className={styles.filtros}>
-                        <div> Alphabetical order
+                        <div> Alphabetical Order
                             <select className={styles.select} onChange={handleSort}>
                                 <option>...</option>
                                 <option value="asc">Ascending</option>
@@ -58,7 +59,7 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
                                 <option value="menp">Major to Minor</option>
                             </select>
                         </div>
-                        <div> Search by Country
+                        <div> Continent
                             <select className={styles.select} onChange={handleFilteredCountrie}>
                                 <option value={"All"}>...</option>
                                 <option value={"South America"}>South America</option>
@@ -73,7 +74,7 @@ export default function NavBar({ setCurrentPage, allActivities, handleSortPop, h
                         <div> Search by Activity
                             {(activities?.length === 0)
                                 ? <p>No activities have been created</p>
-                                : <select className={styles.select} onChange={allActivities}>
+                                : <select className={styles.select} onChange={handleFilterByAct}>
                                     <option value="none">...</option>
                                     {activities?.map(e => (
                                         <option value={e.name} key={e.id}>{e.name}</option>
