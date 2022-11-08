@@ -1,6 +1,7 @@
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     background-color: rgb(30, 30, 30);
     height: 6rem;
     width: 100%;
@@ -8,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     color: rgb(255, 255, 255);
+    z-index: 10;
 }
 
 .contLogo {
@@ -56,14 +58,14 @@
 }
 
 .searchinp {
-    width: 25vw;
+    width: 23vw;
     height: 1.7rem;
     border-radius: 1rem;
     margin-top: .3rem;
 }
 
 .select {
-    width: 9vw;
+    width: 7vw;
     height: 1.7rem;
     border-radius: 1rem;
     margin-top: .5rem;
@@ -91,13 +93,14 @@
     right: 2rem;
     cursor: pointer;
     border-radius: 5rem;
-    color: white;
+    color: black;
     background-color: rgb(235, 192, 19);
     border-color: rgba(235, 192, 19, 0.353);
     transition: .3s;
 }
 
 .contAct:hover {
+    color: white;
     transition: .3s;
     transform: scale(1.1);
     background-color: rgb(235, 192, 19);

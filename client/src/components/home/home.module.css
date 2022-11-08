@@ -1,8 +1,11 @@
 body {
     margin: 0;
-    background-image: url("../images/bg.png");
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/home.webp");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .prindiv {
@@ -12,12 +15,10 @@ body {
     align-items: center;
     margin-top: 5rem;
     height: 100%;
+    width: 100%;
 }
 
 .contenedorCards {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 5rem;
     width: 95%;
     border-radius: 2rem;
     display: grid;

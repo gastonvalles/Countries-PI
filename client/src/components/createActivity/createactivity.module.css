@@ -5,41 +5,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/bg.png");
     overflow: none;
+    background-image: url("../images/bg.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .contenedorform {
-    background-color: rgb(235, 192, 19);
-    height: 45rem;
-    width: 75%;
+    background-color: rgba(255, 255, 255, 0.332);
+    width: 70%;
+    height: 80%;
     border: solid 3px;
     border-color: black;
     border-radius: 5rem;
+    margin-top: 17vh;
 }
 
 .titulof {
-    margin-top: 3rem;
-    font-size: 35px;
+    font-size: 30px;
     font-style: italic;
     font-weight: bold;
 }
 
-.formulario {
-    height: 30rem;
+/* .formulario {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5rem;
+    padding-bottom: 2rem;
+} */
+
+.formularioPosta {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .campos {
-    height: 3rem;
+    height: 65px;
     width: 50rem;
-    margin-top: 2rem;
     font-size: 20px;
     font-weight: bold;
     border-radius: 5rem;

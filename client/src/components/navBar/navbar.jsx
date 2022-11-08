@@ -85,9 +85,11 @@ export default function NavBar({ setCurrentPage, handleFilterByAct, handleSortPo
                     </div>
                 ) : null
             }
-            <button className={styles.contAct}>
-                <Link to="/activities" className={styles.createAct}>Create Touristic Activity</Link>
-            </button>
+            <Link to="/activities" className={styles.createAct}>
+                <button className={styles.contAct}>
+                    Create Touristic Activity
+                </button>
+            </Link>
         </div>
     )
 };

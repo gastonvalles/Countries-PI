@@ -118,7 +118,7 @@ export default function CreateActivity() {
             <div className={styles.contenedorform}>
                 <h2 className={styles.titulof}>Create your Tourist Activity</h2>
                 <div className={styles.formulario}>
-                    <form onSubmit={handleSubmit}>
+                    <form className={styles.formularioPosta} onSubmit={handleSubmit}>
                         <div className={styles.campos}>
                             <label>Name: </label>
                             <input className={styles.inputs} type="text" placeholder="Ej: Skate" value={input.name} name="name" onChange={handleChange} />
