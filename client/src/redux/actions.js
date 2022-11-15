@@ -70,7 +70,7 @@ export function getCountriesQuery(name) {
     }
 };
 
-//filter by activities (Activity?)
+//filter by activities
 export function filterByAct(Activity) {
     return {
         type: FILTER_BY_ACTIVITIES,

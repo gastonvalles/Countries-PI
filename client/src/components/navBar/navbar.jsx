@@ -47,14 +47,14 @@ export default function NavBar({ setCurrentPage, handleFilterByAct, handleSortPo
                     <div className={styles.filtros}>
                         <div> Alphabetical Order
                             <select className={styles.select} onChange={handleSort}>
-                                <option>...</option>
+                                <option value="none">...</option>
                                 <option value="asc">Ascending</option>
                                 <option value="desc">Descending</option>
                             </select>
                         </div>
                         <div> Population
                             <select className={styles.select} onChange={handleSortPop}>
-                                <option>...</option>
+                                <option value="none">...</option>
                                 <option value="mayp">Minor to Major</option>
                                 <option value="menp">Major to Minor</option>
                             </select>
@@ -75,7 +75,7 @@ export default function NavBar({ setCurrentPage, handleFilterByAct, handleSortPo
                             {(activities?.length === 0)
                                 ? <p>No activities have been created</p>
                                 : <select className={styles.select} onChange={handleFilterByAct}>
-                                    <option value="none">...</option>
+                                    <option value={"All"}>...</option>
                                     {activities?.map(e => (
                                         <option value={e.name} key={e.id}>{e.name}</option>
                                     ))}
